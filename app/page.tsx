@@ -15,12 +15,16 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import LogoWrapper from "@/components/logo-wrapper"
+import AnimatedBackground from "@/components/animated-background"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900 relative">
+      {/* Animated Background */}
+      <AnimatedBackground />
+
       {/* Header */}
-      <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 sticky top-0 z-50">
+      <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 sticky top-0 z-50 relative">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -46,8 +50,8 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 relative">
+        <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <div className="mb-8">
@@ -78,8 +82,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 1: Consulting & Business Readiness */}
-      <section id="consulting" className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
+      <section id="consulting" className="py-20 bg-gray-800 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">AI Readiness. Without the Guesswork.</h2>
@@ -134,8 +138,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 2: Custom Agentic Solutions */}
-      <section id="solutions" className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
+      <section id="solutions" className="py-20 bg-gray-900 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">Custom AI Agents for Real-World Workflows</h2>
@@ -206,8 +210,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Agent Marketplace */}
-      <section id="marketplace" className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
+      <section id="marketplace" className="py-20 bg-gray-800 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">AI Agents, Ready to Work</h2>
@@ -267,8 +271,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: Advanced AI Training */}
-      <section id="training" className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
+      <section id="training" className="py-20 bg-gray-900 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">Stay Ahead with Future-Ready AI Skills</h2>
@@ -319,8 +323,8 @@ export default function HomePage() {
       </section>
 
       {/* Section 5: Newsletter */}
-      <section className="py-20 bg-blue-800">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-blue-800 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-white mb-4">Smarter Every Month.</h2>
             <p className="text-xl text-blue-100 mb-8">
@@ -340,8 +344,8 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
+      <footer className="bg-gray-900 text-white py-12 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <div className="flex items-center space-x-3">
