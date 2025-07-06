@@ -26,9 +26,9 @@ function CircularProgress({ percentage, size, strokeWidth, delay, x, y }: Circul
             clearInterval(interval)
             return percentage
           }
-          return prev + 1
+          return prev + 2
         })
-      }, 50)
+      }, 40)
       return () => clearInterval(interval)
     }, delay)
 
@@ -92,9 +92,9 @@ function AnimatedBar({ width, height, percentage, delay, x, y }: AnimatedBarProp
             clearInterval(interval)
             return percentage
           }
-          return prev + 2
+          return prev + 3
         })
-      }, 30)
+      }, 25)
       return () => clearInterval(interval)
     }, delay)
 
@@ -149,8 +149,8 @@ function ConcentricCircles({ x, y, delay }: ConcentricCirclesProps) {
               height: `${ring * 15}px`,
               left: `${(96 - ring * 15) / 2}px`,
               top: `${(96 - ring * 15) / 2}px`,
-              animationDelay: `${index * 0.5}s`,
-              animationDuration: "3s",
+              animationDelay: `${index * 0.3}s`,
+              animationDuration: "2.5s",
             }}
           />
         ))}
@@ -173,8 +173,8 @@ function GridPattern({ x, y }: GridPatternProps) {
             key={index}
             className="w-2 h-2 bg-blue-500 rounded-sm animate-pulse"
             style={{
-              animationDelay: `${(index * 0.1) % 3}s`,
-              animationDuration: "2s",
+              animationDelay: `${(index * 0.05) % 2}s`,
+              animationDuration: "1.5s",
             }}
           />
         ))}
@@ -187,21 +187,41 @@ export default function AnimatedBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Circular Progress Indicators */}
-      <CircularProgress percentage={87} size={80} strokeWidth={6} delay={500} x="10%" y="15%" />
-      <CircularProgress percentage={94} size={60} strokeWidth={4} delay={1200} x="85%" y="25%" />
-      <CircularProgress percentage={76} size={70} strokeWidth={5} delay={2000} x="15%" y="70%" />
-      <CircularProgress percentage={92} size={50} strokeWidth={3} delay={2800} x="80%" y="75%" />
-      <CircularProgress percentage={68} size={90} strokeWidth={7} delay={3500} x="50%" y="10%" />
+      <div style={{ animationDelay: "0s" }}>
+        <CircularProgress percentage={87} size={80} strokeWidth={6} delay={300} x="10%" y="15%" />
+      </div>
+      <div style={{ animationDelay: "1s" }}>
+        <CircularProgress percentage={94} size={60} strokeWidth={4} delay={800} x="85%" y="25%" />
+      </div>
+      <div style={{ animationDelay: "2s" }}>
+        <CircularProgress percentage={76} size={70} strokeWidth={5} delay={1500} x="15%" y="70%" />
+      </div>
+      <div style={{ animationDelay: "3s" }}>
+        <CircularProgress percentage={92} size={50} strokeWidth={3} delay={2200} x="80%" y="75%" />
+      </div>
+      <div style={{ animationDelay: "4s" }}>
+        <CircularProgress percentage={68} size={90} strokeWidth={7} delay={3000} x="50%" y="10%" />
+      </div>
 
       {/* Animated Bars */}
-      <AnimatedBar width={120} height={8} percentage={85} delay={800} x="20%" y="40%" />
-      <AnimatedBar width={100} height={6} percentage={72} delay={1500} x="70%" y="50%" />
-      <AnimatedBar width={80} height={10} percentage={91} delay={2200} x="25%" y="85%" />
-      <AnimatedBar width={140} height={7} percentage={78} delay={2900} x="60%" y="20%" />
-      <AnimatedBar width={90} height={9} percentage={88} delay={3600} x="5%" y="60%" />
+      <div style={{ animationDelay: "0.5s" }}>
+        <AnimatedBar width={120} height={8} percentage={85} delay={600} x="20%" y="40%" />
+      </div>
+      <div style={{ animationDelay: "1.5s" }}>
+        <AnimatedBar width={100} height={6} percentage={72} delay={1200} x="70%" y="50%" />
+      </div>
+      <div style={{ animationDelay: "2.5s" }}>
+        <AnimatedBar width={80} height={10} percentage={91} delay={1800} x="25%" y="85%" />
+      </div>
+      <div style={{ animationDelay: "3.5s" }}>
+        <AnimatedBar width={140} height={7} percentage={78} delay={2400} x="60%" y="20%" />
+      </div>
+      <div style={{ animationDelay: "4.5s" }}>
+        <AnimatedBar width={90} height={9} percentage={88} delay={3200} x="5%" y="60%" />
+      </div>
 
       {/* Multi-bar Charts */}
-      <div className="absolute opacity-25" style={{ left: "40%", top: "60%" }}>
+      <div className="absolute opacity-25" style={{ left: "40%", top: "60%", animationDelay: "1s" }}>
         <div className="flex items-end space-x-1 h-16">
           {[65, 80, 45, 90, 70, 85].map((height, index) => (
             <div
@@ -209,7 +229,7 @@ export default function AnimatedBackground() {
               className="bg-gradient-to-t from-blue-600 to-cyan-400 w-3 transition-all duration-1000 ease-out"
               style={{
                 height: `${height}%`,
-                animationDelay: `${index * 200 + 1000}ms`,
+                animationDelay: `${index * 150 + 800}ms`,
                 boxShadow: "0 0 8px rgba(59, 130, 246, 0.4)",
               }}
             />
@@ -218,17 +238,29 @@ export default function AnimatedBackground() {
       </div>
 
       {/* Concentric Circles */}
-      <ConcentricCircles x="30%" y="30%" delay={1000} />
-      <ConcentricCircles x="75%" y="60%" delay={2500} />
-      <ConcentricCircles x="10%" y="45%" delay={4000} />
+      <div style={{ animationDelay: "0s" }}>
+        <ConcentricCircles x="30%" y="30%" delay={1000} />
+      </div>
+      <div style={{ animationDelay: "2s" }}>
+        <ConcentricCircles x="75%" y="60%" delay={2000} />
+      </div>
+      <div style={{ animationDelay: "3.5s" }}>
+        <ConcentricCircles x="10%" y="45%" delay={3500} />
+      </div>
 
       {/* Grid Patterns */}
-      <GridPattern x="5%" y="5%" />
-      <GridPattern x="85%" y="10%" />
-      <GridPattern x="90%" y="80%" />
+      <div style={{ animationDelay: "0.5s" }}>
+        <GridPattern x="5%" y="5%" />
+      </div>
+      <div style={{ animationDelay: "2.5s" }}>
+        <GridPattern x="85%" y="10%" />
+      </div>
+      <div style={{ animationDelay: "4s" }}>
+        <GridPattern x="90%" y="80%" />
+      </div>
 
       {/* Floating Data Points */}
-      <div className="absolute opacity-20" style={{ left: "60%", top: "40%" }}>
+      <div className="absolute opacity-20" style={{ left: "60%", top: "40%", animationDelay: "1.5s" }}>
         <div className="relative w-32 h-32">
           {Array.from({ length: 12 }).map((_, index) => (
             <div
@@ -237,8 +269,8 @@ export default function AnimatedBackground() {
               style={{
                 left: `${Math.random() * 120}px`,
                 top: `${Math.random() * 120}px`,
-                animationDelay: `${index * 0.3}s`,
-                animationDuration: "3s",
+                animationDelay: `${index * 0.2}s`,
+                animationDuration: "2.5s",
               }}
             />
           ))}
@@ -248,25 +280,25 @@ export default function AnimatedBackground() {
       {/* Scanning Lines */}
       <div
         className="absolute w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30 animate-pulse"
-        style={{ top: "35%" }}
+        style={{ top: "35%", animationDelay: "0s" }}
       />
       <div
         className="absolute w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-20 animate-pulse"
-        style={{ top: "65%", animationDelay: "1s" }}
+        style={{ top: "65%", animationDelay: "1.5s" }}
       />
 
       {/* Vertical Scanning Lines */}
       <div
         className="absolute h-full w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-20 animate-pulse"
-        style={{ left: "25%", animationDelay: "2s" }}
+        style={{ left: "25%", animationDelay: "3s" }}
       />
       <div
         className="absolute h-full w-px bg-gradient-to-b from-transparent via-cyan-500 to-transparent opacity-15 animate-pulse"
-        style={{ left: "75%", animationDelay: "3s" }}
+        style={{ left: "75%", animationDelay: "4.5s" }}
       />
 
       {/* Hexagonal Patterns */}
-      <div className="absolute opacity-10" style={{ left: "45%", top: "80%" }}>
+      <div className="absolute opacity-10" style={{ left: "45%", top: "80%", animationDelay: "2s" }}>
         <div className="grid grid-cols-4 gap-2">
           {Array.from({ length: 16 }).map((_, index) => (
             <div
