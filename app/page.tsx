@@ -23,6 +23,7 @@ export default function HomePage() {
       {/* Animated Background */}
       <AnimatedBackground />
 
+
       {/* Header */}
       <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 sticky top-0 z-50 relative">
         <div className="container mx-auto px-4 py-4">
