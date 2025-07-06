@@ -8,32 +8,30 @@ import type * as THREE from "three"
 function InfinityDots() {
   const groupRef = useRef<THREE.Group>(null)
 
-  // Create infinity curve points
+  // Create single infinity curve points
   const infinityPoints = useMemo(() => {
     const points = []
-    const scale = 2
+    const scale = 1.5
+    const numPoints = 80
 
-    // Left loop
-    for (let i = 0; i <= 50; i++) {
-      const t = (i / 50) * Math.PI * 2
-      const x = (-scale * Math.cos(t)) / (1 + Math.sin(t) * Math.sin(t))
-      const y = (scale * Math.sin(t) * Math.cos(t)) / (1 + Math.sin(t) * Math.sin(t))
-      const z = Math.sin(t * 4) * 0.1 // Add slight Z variation
+    for (let i = 0; i <= numPoints; i++) {
+      const t = (i / numPoints) * Math.PI * 2
 
-      // Vary dot sizes based on position
-      const size = 0.08 + Math.abs(Math.sin(t * 3)) * 0.04
-      points.push({ position: [x - 1, y, z], size, delay: i * 0.1 })
-    }
+      // Parametric equations for infinity symbol (lemniscate)
+      const denominator = 1 + Math.sin(t) * Math.sin(t)
+      const x = (scale * Math.cos(t)) / denominator
+      const y = (scale * Math.sin(t) * Math.cos(t)) / denominator
+      const z = Math.sin(t * 3) * 0.15 // Add slight Z variation for depth
 
-    // Right loop
-    for (let i = 0; i <= 50; i++) {
-      const t = (i / 50) * Math.PI * 2
-      const x = (scale * Math.cos(t)) / (1 + Math.sin(t) * Math.sin(t))
-      const y = (scale * Math.sin(t) * Math.cos(t)) / (1 + Math.sin(t) * Math.sin(t))
-      const z = Math.sin(t * 4 + Math.PI) * 0.1
+      // Vary dot sizes based on position for visual interest
+      const size = 0.06 + Math.abs(Math.sin(t * 2.5)) * 0.04
 
-      const size = 0.08 + Math.abs(Math.sin(t * 3)) * 0.04
-      points.push({ position: [x + 1, y, z], size, delay: (i + 50) * 0.1 })
+      points.push({
+        position: [x, y, z],
+        size,
+        delay: i * 0.08,
+        originalY: y,
+      })
     }
 
     return points
@@ -41,21 +39,28 @@ function InfinityDots() {
 
   useFrame((state) => {
     if (groupRef.current) {
-      // Gentle rotation
-      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.1
-      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.05
+      // Gentle rotation around Y axis
+      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.2
+
+      // Slight tilt on X axis
+      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
 
       // Animate individual dots
       groupRef.current.children.forEach((child, index) => {
         const mesh = child as THREE.Mesh
         const point = infinityPoints[index]
         if (point) {
-          // Pulsing effect
-          const pulse = 1 + Math.sin(state.clock.elapsedTime * 2 + point.delay) * 0.2
+          // Pulsing effect with different phases
+          const pulse = 1 + Math.sin(state.clock.elapsedTime * 1.5 + point.delay) * 0.25
           mesh.scale.setScalar(pulse)
 
           // Floating effect
-          mesh.position.y = point.position[1] + Math.sin(state.clock.elapsedTime + point.delay) * 0.1
+          mesh.position.y = point.originalY + Math.sin(state.clock.elapsedTime * 0.8 + point.delay) * 0.1
+
+          // Subtle color variation
+          const material = mesh.material as THREE.MeshStandardMaterial
+          const intensity = 0.05 + Math.sin(state.clock.elapsedTime + point.delay) * 0.05
+          material.emissiveIntensity = Math.max(0, intensity)
         }
       })
     }
@@ -65,13 +70,13 @@ function InfinityDots() {
     <group ref={groupRef}>
       {infinityPoints.map((point, index) => (
         <mesh key={index} position={point.position}>
-          <sphereGeometry args={[point.size, 16, 16]} />
+          <sphereGeometry args={[point.size, 12, 12]} />
           <meshStandardMaterial
-            color="#e5e7eb"
-            metalness={0.3}
-            roughness={0.2}
+            color="#f3f4f6"
+            metalness={0.4}
+            roughness={0.3}
             emissive="#3b82f6"
-            emissiveIntensity={0.1}
+            emissiveIntensity={0.08}
           />
         </mesh>
       ))}
@@ -83,18 +88,19 @@ function FloatingParticles() {
   const particlesRef = useRef<THREE.Points>(null)
 
   const particles = useMemo(() => {
-    const positions = new Float32Array(100 * 3)
-    for (let i = 0; i < 100; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 10
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 10
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 10
+    const positions = new Float32Array(60 * 3) // Reduced particle count
+    for (let i = 0; i < 60; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 8
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 8
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 8
     }
     return positions
   }, [])
 
   useFrame((state) => {
     if (particlesRef.current) {
-      particlesRef.current.rotation.y = state.clock.elapsedTime * 0.05
+      particlesRef.current.rotation.y = state.clock.elapsedTime * 0.03
+      particlesRef.current.rotation.x = state.clock.elapsedTime * 0.02
     }
   })
 
@@ -103,7 +109,7 @@ function FloatingParticles() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" count={particles.length / 3} array={particles} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.02} color="#6366f1" transparent opacity={0.6} sizeAttenuation />
+      <pointsMaterial size={0.015} color="#6366f1" transparent opacity={0.4} sizeAttenuation />
     </points>
   )
 }
@@ -154,28 +160,28 @@ export default function AnimatedLogo({ className = "" }: { className?: string })
     <div className={`w-full h-full ${className}`}>
       <Suspense fallback={<LogoFallback />}>
         <Canvas
-          camera={{ position: [0, 0, 8], fov: 50 }}
+          camera={{ position: [0, 0, 6], fov: 45 }}
           gl={{ antialias: true, alpha: true }}
           onCreated={(state) => {
             state.gl.setClearColor(0x000000, 0)
           }}
         >
           {/* Lighting setup */}
-          <ambientLight intensity={0.4} />
+          <ambientLight intensity={0.3} />
           <directionalLight
-            position={[10, 10, 5]}
-            intensity={1}
+            position={[8, 8, 5]}
+            intensity={0.8}
             castShadow
-            shadow-mapSize-width={2048}
-            shadow-mapSize-height={2048}
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
           />
-          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3b82f6" />
-          <spotLight position={[0, 10, 0]} angle={0.3} penumbra={1} intensity={0.5} color="#8b5cf6" />
+          <pointLight position={[-6, -6, -6]} intensity={0.4} color="#3b82f6" />
+          <spotLight position={[0, 8, 0]} angle={0.4} penumbra={1} intensity={0.3} color="#8b5cf6" />
 
           {/* Environment for reflections */}
           <Environment preset="city" />
 
-          {/* Main logo */}
+          {/* Single infinity symbol */}
           <InfinityDots />
 
           {/* Background particles */}
@@ -186,7 +192,7 @@ export default function AnimatedLogo({ className = "" }: { className?: string })
             enableZoom={false}
             enablePan={false}
             autoRotate
-            autoRotateSpeed={0.5}
+            autoRotateSpeed={0.3}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
