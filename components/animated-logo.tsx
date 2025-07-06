@@ -12,7 +12,7 @@ function InfinityDots() {
   const infinityPoints = useMemo(() => {
     const points = []
     const scale = 1.5
-    const numPoints = 80
+    const numPoints = 60
 
     for (let i = 0; i <= numPoints; i++) {
       const t = (i / numPoints) * Math.PI * 2
@@ -40,10 +40,10 @@ function InfinityDots() {
   useFrame((state) => {
     if (groupRef.current) {
       // Gentle rotation around Y axis
-      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.2
+      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.08
 
       // Slight tilt on X axis
-      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
+      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.04
 
       // Animate individual dots
       groupRef.current.children.forEach((child, index) => {
@@ -109,7 +109,7 @@ function FloatingParticles() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" count={particles.length / 3} array={particles} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.015} color="#6366f1" transparent opacity={0.4} sizeAttenuation />
+      <pointsMaterial size={0.025} color="#6366f1" transparent opacity={0.4} sizeAttenuation />
     </points>
   )
 }
