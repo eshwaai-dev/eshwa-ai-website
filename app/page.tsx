@@ -36,16 +36,28 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Consulting
                 </Link>
-                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Custom Solutions
                 </Link>
-                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Marketplace
                 </Link>
-                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Training
                 </Link>
               </div>
@@ -97,16 +109,28 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Consulting
                 </Link>
-                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Custom Solutions
                 </Link>
-                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Marketplace
                 </Link>
-                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Training
                 </Link>
               </div>
@@ -182,16 +206,28 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Consulting
                 </Link>
-                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Custom Solutions
                 </Link>
-                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Marketplace
                 </Link>
-                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Training
                 </Link>
               </div>
@@ -283,16 +319,28 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Consulting
                 </Link>
-                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Custom Solutions
                 </Link>
-                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Marketplace
                 </Link>
-                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Training
                 </Link>
               </div>
@@ -373,16 +421,28 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Consulting
                 </Link>
-                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Custom Solutions
                 </Link>
-                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Marketplace
                 </Link>
-                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link 
+                  href="#training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                >
                   Training
                 </Link>
               </div>

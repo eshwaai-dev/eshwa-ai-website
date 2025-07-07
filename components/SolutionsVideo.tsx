@@ -32,6 +32,13 @@ export default function SolutionsVideo() {
           videoElement.currentTime = 0;
           videoElement.play().catch(console.error);
         }
+        // Add smooth transition on loop
+        videoElement.addEventListener('ended', () => {
+          videoElement.style.opacity = '0.5';
+          setTimeout(() => {
+            videoElement.style.opacity = '1';
+          }, 250);
+        });
       };
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
@@ -48,8 +55,9 @@ export default function SolutionsVideo() {
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover object-center transition-opacity duration-500 transform-none border-2 border-gray-900"
+        className="w-full h-full object-cover object-center"
         style={{
+          transition: 'opacity 0.5s ease-in-out',
           zIndex: -1,
           filter: 'brightness(0.8)',
           transform: 'none',
