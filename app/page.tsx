@@ -26,9 +26,13 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="min-h-screen relative">
-        <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
+        <div className="absolute inset-0">
+          <BackgroundVideo />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        </div>
+        <header className="fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
-            <nav className="flex items-center justify-between">
+            <nav className="flex items-center justify-between bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 border-b border-gray-800">
               <div className="flex items-center space-x-3">
                 <Link href="#" className="flex items-center">
                   <LogoWrapper size="header" />
@@ -64,9 +68,6 @@ export default function HomePage() {
             </nav>
           </div>
         </header>
-        <div className="absolute inset-0 z-0">
-          <BackgroundVideo />
-        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
