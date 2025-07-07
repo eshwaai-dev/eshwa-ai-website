@@ -15,57 +15,60 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import LogoWrapper from "@/components/logo-wrapper"
-import AnimatedBackground from "@/components/animated-background"
+import BackgroundVideo from "@/components/BackgroundVideo"
+import ConsultingVideo from "@/components/ConsultingVideo"
+import SolutionsVideo from "@/components/SolutionsVideo"
+import MarketingVideo from "@/components/MarketingVideo"
+import TrainingVideo from "@/components/TrainingVideo"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-900 relative">
-      {/* Animated Background */}
-      <AnimatedBackground />
-
-
-      {/* Header */}
-      <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 sticky top-0 z-50 relative">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <LogoWrapper className="w-12 h-8" />
-              <span className="text-2xl font-bold text-white">ESHWA AI</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
-                Consulting
-              </Link>
-              <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
-                Custom Solutions
-              </Link>
-              <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
-                Marketplace
-              </Link>
-              <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
-                Training
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
-
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 relative">
+      <section className="min-h-screen relative">
+        <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <Link href="#" className="flex items-center">
+                  <LogoWrapper size="header" />
+                  <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
+                </Link>
+              </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Consulting
+                </Link>
+                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Custom Solutions
+                </Link>
+                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Marketplace
+                </Link>
+                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Training
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <div className="absolute inset-0 z-0">
+          <BackgroundVideo />
+        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <div className="mb-8">
                 <div className="flex justify-center items-center mb-8">
-                  <LogoWrapper className="w-80 h-60" />
+                  <LogoWrapper size="hero" className="text-white" />
                 </div>
                 <div className="text-4xl font-bold text-gray-200 mb-4 tracking-wider">ESHWA AI</div>
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
               AI. Simplified for Business. Built for Impact.
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
               From strategy to solutions, we help businesses unlock real value with AI—securely, responsibly, and at
               scale.
             </p>
@@ -83,7 +86,36 @@ export default function HomePage() {
       </section>
 
       {/* Section 1: Consulting & Business Readiness */}
-      <section id="consulting" className="py-20 bg-gray-800 relative">
+      <section id="consulting" className="py-20 relative bg-gray-800">
+        <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <Link href="#" className="flex items-center">
+                  <LogoWrapper size="header" />
+                  <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
+                </Link>
+              </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Consulting
+                </Link>
+                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Custom Solutions
+                </Link>
+                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Marketplace
+                </Link>
+                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Training
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <div className="absolute inset-0 z-0">
+          <ConsultingVideo />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -139,7 +171,36 @@ export default function HomePage() {
       </section>
 
       {/* Section 2: Custom Agentic Solutions */}
-      <section id="solutions" className="py-20 bg-gray-900 relative">
+      <section id="solutions" className="py-20 relative bg-gray-900">
+        <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <Link href="#" className="flex items-center">
+                  <LogoWrapper size="header" />
+                  <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
+                </Link>
+              </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Consulting
+                </Link>
+                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Custom Solutions
+                </Link>
+                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Marketplace
+                </Link>
+                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Training
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <div className="absolute inset-0 z-0">
+          <SolutionsVideo />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -211,7 +272,36 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Agent Marketplace */}
-      <section id="marketplace" className="py-20 bg-gray-800 relative">
+      <section id="marketplace" className="py-20 relative bg-gray-800">
+        <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <Link href="#" className="flex items-center">
+                  <LogoWrapper size="header" />
+                  <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
+                </Link>
+              </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Consulting
+                </Link>
+                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Custom Solutions
+                </Link>
+                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Marketplace
+                </Link>
+                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Training
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <div className="absolute inset-0 z-0">
+          <MarketingVideo />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -272,7 +362,36 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: Advanced AI Training */}
-      <section id="training" className="py-20 bg-gray-900 relative">
+      <section id="training" className="py-20 relative bg-gray-900">
+        <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <Link href="#" className="flex items-center">
+                  <LogoWrapper size="header" />
+                  <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
+                </Link>
+              </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <Link href="#consulting" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Consulting
+                </Link>
+                <Link href="#solutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Custom Solutions
+                </Link>
+                <Link href="#marketplace" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Marketplace
+                </Link>
+                <Link href="#training" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Training
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <div className="absolute inset-0 z-0">
+          <TrainingVideo />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
