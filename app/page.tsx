@@ -80,7 +80,8 @@ export default function HomePage() {
               </div>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
-              Led by Humans. Powered by AI.
+              <span className="block mb-2">Led by Humans.</span>
+              <span className="block">Powered by AI.</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
               Helping businesses unlock real-world value with secure, ethical, and scalable AI.
