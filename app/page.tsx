@@ -25,10 +25,15 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="min-h-screen relative">
-        <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
+      <section className="min-h-screen relative mb-10">
+        <div className="absolute inset-0">
+          <BackgroundVideo />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 opacity-90"></div>
+        </div>
+        <header className="fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
-            <nav className="flex items-center justify-between">
+            <nav className="flex items-center justify-between bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 border-b border-gray-800">
               <div className="flex items-center space-x-3">
                 <Link href="#" className="flex items-center">
                   <LogoWrapper size="header" />
@@ -64,9 +69,6 @@ export default function HomePage() {
             </nav>
           </div>
         </header>
-        <div className="absolute inset-0 z-0">
-          <BackgroundVideo />
-        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
@@ -78,7 +80,8 @@ export default function HomePage() {
               </div>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
-              Led by Humans. Powered by AI.
+              <span className="block mb-2">Led by Humans.</span>
+              <span className="block">Powered by AI.</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
               Helping businesses unlock real-world value with secure, ethical, and scalable AI.
@@ -97,7 +100,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 1: Consulting & Business Readiness */}
-      <section id="consulting" className="py-20 relative bg-gray-800">
+      <section id="consulting" className="py-32 relative bg-gray-800 mb-10">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
@@ -138,12 +141,13 @@ export default function HomePage() {
         </header>
         <div className="absolute inset-0 z-0">
           <ConsultingVideo />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">AI Readiness. Without the Guesswork.</h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            <div className="text-center mb-16 px-4">
+              <h2 className="text-5xl font-bold text-white mb-6">AI Readiness. Without the Guesswork.</h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
                 Before you invest in AI, know where your business stands. Our consulting services deliver tailored
                 readiness assessments, risk evaluations, and practical roadmaps for implementation. Whether you're in
                 healthcare, law, retail, or enterprise services—we prepare you to adopt AI with confidence, compliance,
@@ -151,21 +155,21 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-12 px-4">
               <Card className="bg-gray-700 border-gray-600">
                 <CardHeader>
-                  <CheckCircle className="h-8 w-8 text-green-600 mb-2" />
-                  <CardTitle className="text-white">High-Impact Opportunities</CardTitle>
+                  <CheckCircle className="h-10 w-10 text-green-600 mb-2" />
+                  <CardTitle className="text-xl text-white">High-Impact Opportunities</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300">Identify AI opportunities that deliver measurable business value</p>
+                  <p className="text-lg text-gray-300">Identify AI opportunities that deliver measurable business value</p>
                 </CardContent>
               </Card>
 
               <Card className="bg-gray-700 border-gray-600">
                 <CardHeader>
-                  <Settings className="h-8 w-8 text-blue-600 mb-2" />
-                  <CardTitle className="text-white">Infrastructure Assessment</CardTitle>
+                  <Settings className="h-10 w-10 text-blue-600 mb-2" />
+                  <CardTitle className="text-xl text-white">Infrastructure Assessment</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-300">Evaluate data infrastructure and workflow gaps</p>
@@ -174,11 +178,11 @@ export default function HomePage() {
 
               <Card className="bg-gray-700 border-gray-600">
                 <CardHeader>
-                  <Scale className="h-8 w-8 text-purple-600 mb-2" />
-                  <CardTitle className="text-white">Compliance & Ethics</CardTitle>
+                  <Scale className="h-10 w-10 text-purple-600 mb-2" />
+                  <CardTitle className="text-xl text-white">Compliance & Ethics</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300">Navigate compliance, governance, and ethical requirements</p>
+                  <p className="text-lg text-gray-300">Navigate compliance, governance, and ethical requirements</p>
                 </CardContent>
               </Card>
             </div>
@@ -194,7 +198,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 2: Custom Agentic Solutions */}
-      <section id="solutions" className="py-20 relative bg-gray-900">
+      <section id="solutions" className="py-32 relative bg-gray-900 mb-10">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
@@ -307,7 +311,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Agent Marketplace */}
-      <section id="marketplace" className="py-20 relative bg-gray-800">
+      <section id="marketplace" className="py-32 relative bg-gray-800 mb-10">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
