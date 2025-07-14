@@ -20,43 +20,44 @@ import ConsultingVideo from "@/components/ConsultingVideo"
 import SolutionsVideo from "@/components/SolutionsVideo"
 import MarketingVideo from "@/components/MarketingVideo"
 import TrainingVideo from "@/components/TrainingVideo"
+import { Navigation } from "@/components/navigation"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="min-h-screen relative">
+      <section className="min-h-screen relative bg-gradient-to-b from-blue-900/95 to-blue-800/95 py-10">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <Link href="#" className="flex items-center">
+                <Link href="/" className="flex items-center">
                   <LogoWrapper size="header" />
                   <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
                 <Link 
-                  href="#consulting" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Consulting
                 </Link>
                 <Link 
-                  href="#solutions" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Custom Solutions
                 </Link>
                 <Link 
-                  href="#marketplace" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Marketplace
                 </Link>
                 <Link 
-                  href="#training" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Training
                 </Link>
@@ -77,14 +78,14 @@ export default function HomePage() {
                 <div className="text-4xl font-bold text-gray-200 mb-4 tracking-wider">ESHWA AI</div>
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
-              AI. Simplified for Business. Built for Impact.
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">Led by Humans</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">Powered by AI</span>
             </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-              From strategy to solutions, we help businesses unlock real value with AI—securely, responsibly, and at
-              scale.
+            <p className="text-2xl md:text-3xl text-gray-200 mb-8 max-w-3xl mx-auto">
+              Helping businesses unlock real-world value with secure, ethical, and scalable AI.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+s            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-500 hover:bg-blue-600">
                 Get a Readiness Assessment
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -98,38 +99,38 @@ export default function HomePage() {
       </section>
 
       {/* Section 1: Consulting & Business Readiness */}
-      <section id="consulting" className="py-20 relative bg-gray-800">
+      <section className="py-10 relative bg-gradient-to-b from-blue-800/95 to-blue-900/95">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <Link href="#" className="flex items-center">
+                <Link href="/" className="flex items-center">
                   <LogoWrapper size="header" />
                   <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
                 <Link 
-                  href="#consulting" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Consulting
                 </Link>
                 <Link 
-                  href="#solutions" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Custom Solutions
                 </Link>
                 <Link 
-                  href="#marketplace" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Marketplace
                 </Link>
                 <Link 
-                  href="#training" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Training
                 </Link>
@@ -142,14 +143,28 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">AI Readiness. Without the Guesswork.</h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Before you invest in AI, know where your business stands. Our consulting services deliver tailored
-                readiness assessments, risk evaluations, and practical roadmaps for implementation. Whether you're in
-                healthcare, law, retail, or enterprise services—we prepare you to adopt AI with confidence, compliance,
-                and clarity.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+              <div className="md:pr-16">
+                <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">AI for Business. Built on Readiness, Not Hype</h2>
+              </div>
+              <div className="text-left">
+                <div className="space-y-8">
+                  <p className="text-xl md:text-2xl text-gray-300">
+                    Before you invest in AI, know where your business stands. Our consulting services deliver tailored
+                    readiness assessments, risk evaluations, and practical roadmaps for implementation. Whether you're in
+                    healthcare, law, retail, or enterprise services—we prepare you to adopt AI with confidence, compliance,
+                    and clarity.
+                  </p>
+                  <div className="space-y-4">
+                    <p className="text-xl text-white mb-2">You'll Gain:</p>
+                    <ul className="text-xl text-gray-300 list-disc pl-8">
+                      <li>A clear view of where AI can improve efficiency and outcomes</li>
+                      <li>Insight into data maturity, integration, and workflow fit</li>
+                      <li>Compliance, privacy, and ethical guidance from day one</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -186,8 +201,78 @@ export default function HomePage() {
 
             <div className="text-center">
               <Button size="lg" className="bg-blue-500 hover:bg-blue-600">
-                Schedule Your Readiness Audit
-                <ArrowRight className="ml-2 h-5 w-5" />
+                → Schedule a Readiness Audit
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Custom Solutions */}
+      <section className="py-10 relative bg-gradient-to-b from-blue-900/95 to-blue-800/95">
+        <div className="absolute inset-0 z-0">
+          <SolutionsVideo />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+              <div>
+                <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">AI Agents That Understand Your Business</h2>
+              </div>
+              <div className="text-left">
+                <p className="text-xl md:text-2xl text-gray-300">
+                  We build agentic solutions tailored to your industry—so AI doesn't just automate, it
+                  collaborates. These solutions function as digital coworkers, streamlining operations and
+                  decision-making with deep vertical intelligence.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-8 mb-12">
+              <Card className="bg-gray-700 border-gray-600">
+                <CardHeader>
+                  <Stethoscope className="h-8 w-8 text-red-600 mb-2" />
+                  <CardTitle className="text-white">Healthcare</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300">Optimize patient flow, improve diagnostic accuracy, and enhance care coordination.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-gray-700 border-gray-600">
+                <CardHeader>
+                  <Scale className="h-8 w-8 text-blue-600 mb-2" />
+                  <CardTitle className="text-white">Legal Services</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300">Automate client intake, accelerate legal research, and streamline contract analysis.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-gray-700 border-gray-600">
+                <CardHeader>
+                  <Store className="h-8 w-8 text-green-600 mb-2" />
+                  <CardTitle className="text-white">Retail</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300">Predict demand trends, optimize inventory management, and deliver personalized customer experiences.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-gray-700 border-gray-600">
+                <CardHeader>
+                  <Building className="h-8 w-8 text-purple-600 mb-2" />
+                  <CardTitle className="text-white">Enterprise Operations</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300">Power intelligent dashboards, support data-driven decisions, and elevate customer engagement.</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <Button size="lg" className="bg-blue-500 hover:bg-blue-600">
+                → Book a Demo
               </Button>
             </div>
           </div>
@@ -195,38 +280,38 @@ export default function HomePage() {
       </section>
 
       {/* Section 2: Custom Agentic Solutions */}
-      <section id="solutions" className="py-20 relative bg-gray-900">
+      <section className="py-10 relative bg-gray-900">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <Link href="#" className="flex items-center">
+                <Link href="/" className="flex items-center">
                   <LogoWrapper size="header" />
                   <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
                 <Link 
-                  href="#consulting" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Consulting
                 </Link>
                 <Link 
-                  href="#solutions" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Custom Solutions
                 </Link>
                 <Link 
-                  href="#marketplace" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Marketplace
                 </Link>
                 <Link 
-                  href="#training" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Training
                 </Link>
@@ -239,13 +324,17 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Custom AI Agents for Real-World Workflows</h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                We build agentic solutions tailored to your industry—so AI doesn't just automate, it collaborates. These
-                solutions function as digital coworkers, streamlining operations and decision-making with deep vertical
-                intelligence.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+              <div>
+                <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Custom AI Agents for Real-World Workflows</h2>
+              </div>
+              <div className="text-left">
+                <p className="text-xl md:text-2xl text-gray-300">
+                  We build agentic solutions tailored to your industry—so AI doesn't just automate, it collaborates. These
+                  solutions function as digital coworkers, streamlining operations and decision-making with deep vertical
+                  intelligence.
+                </p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -308,38 +397,38 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Agent Marketplace */}
-      <section id="marketplace" className="py-20 relative bg-gray-800">
+      <section className="py-20 relative bg-gray-800">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <Link href="#" className="flex items-center">
+                <Link href="/" className="flex items-center">
                   <LogoWrapper size="header" />
                   <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
                 <Link 
-                  href="#consulting" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Consulting
                 </Link>
                 <Link 
-                  href="#solutions" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Custom Solutions
                 </Link>
                 <Link 
-                  href="#marketplace" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Marketplace
                 </Link>
                 <Link 
-                  href="#training" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Training
                 </Link>
@@ -352,13 +441,17 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">AI Agents, Ready to Work</h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Browse our growing library of pre-built, ready-to-deploy AI agents. From lead generation to personal
-                finance to inventory forecasting, these agents are licensed monthly and optimized for productivity, not
-                complexity.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+              <div>
+                <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">AI Agents, Ready to Work</h2>
+              </div>
+              <div className="text-left">
+                <p className="text-xl md:text-2xl text-gray-300">
+                  Browse our growing library of pre-built, ready-to-deploy AI agents. From lead generation to personal
+                  finance to inventory forecasting, these agents are licensed monthly and optimized for productivity, not
+                  complexity.
+                </p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -410,38 +503,38 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: Advanced AI Training */}
-      <section id="training" className="py-20 relative bg-gray-900">
+      <section className="py-20 relative bg-gray-900">
         <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <Link href="#" className="flex items-center">
+                <Link href="/" className="flex items-center">
                   <LogoWrapper size="header" />
                   <span className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">ESHWA AI</span>
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
                 <Link 
-                  href="#consulting" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/consulting" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Consulting
                 </Link>
                 <Link 
-                  href="#solutions" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/solutions" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Custom Solutions
                 </Link>
                 <Link 
-                  href="#marketplace" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/marketplace" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Marketplace
                 </Link>
                 <Link 
-                  href="#training" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors pointer-events-auto"
+                  href="/training" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   Training
                 </Link>
@@ -454,33 +547,32 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Stay Ahead with Future-Ready AI Skills</h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Upskill your team to design, manage, and govern AI systems with confidence. Our advanced training tracks
-                go beyond the basics—covering cutting-edge topics like:
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-lg text-gray-300">Deep Learning Architectures</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-lg text-gray-300">Autonomous Agent Design</span>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+              <div>
+                <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Stay Ahead with Future-Ready AI Skills</h2>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-lg text-gray-300">Multi-Modal & Spatial Intelligence</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-lg text-gray-300">AI Security, Ethics, and Governance</span>
+              <div className="text-left">
+                <p className="text-xl md:text-2xl text-gray-300 mb-6">
+                  Upskill your team to design, manage, and govern AI systems with confidence. Our advanced training tracks
+                  go beyond the basics—covering cutting-edge topics like:
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    <span className="text-lg text-gray-300">Deep Learning Architectures</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    <span className="text-lg text-gray-300">Autonomous Agent Design</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    <span className="text-lg text-gray-300">Multi-Modal & Spatial Intelligence</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    <span className="text-lg text-gray-300">AI Security, Ethics, and Governance</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -524,30 +616,25 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 relative">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="flex items-center space-x-3">
-                <LogoWrapper className="w-8 h-6" />
-                <span className="text-xl font-bold text-white">ESHWA AI</span>
-                <span className="text-gray-400">|</span>
-                <span className="text-gray-400">AI Solutions for Modern Business</span>
-              </div>
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+      <footer className="bg-gradient-to-b from-blue-800/95 to-blue-900/95 text-gray-300 py-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <p className="text-gray-400">
+              Eshwa AI | AI Solutions for Modern Business
+            </p>
+            <div className="mt-4 text-center">
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors mr-4">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors mr-4">
                 Terms
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/contact" className="text-gray-400 hover:text-white transition-colors mr-4">
                 Contact
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://linkedin.com" className="text-gray-400 hover:text-white transition-colors">
                 LinkedIn
-              </Link>
+              </a>
             </div>
           </div>
         </div>

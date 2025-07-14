@@ -119,24 +119,27 @@ export default function ConsultingVideo() {
   return (
     <div 
       ref={containerRef} 
-      className="relative w-full h-full cursor-pointer" 
+      className="relative w-full h-full cursor-pointer"
     >
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        loop
-        className="w-full h-full object-cover object-center"
-        id={videoId}
-        style={{
-          transition: 'opacity 0.5s ease-in-out'
-        }}
-      >
-        <source src="/videos/consulting.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="absolute inset-0 z-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          loop
+          className="w-full h-full object-cover object-center"
+          id={videoId}
+          style={{
+            transition: 'opacity 0.5s ease-in-out'
+          }}
+        >
+          <source src="/videos/consulting.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className="absolute inset-0 bg-black/30 z-10" /> {/* Semi-transparent overlay */}
     </div>
   )
 }

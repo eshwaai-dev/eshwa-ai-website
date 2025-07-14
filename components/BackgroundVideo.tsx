@@ -71,32 +71,27 @@ export default function BackgroundVideo() {
     <div className="absolute inset-0">
       <video
         ref={videoRef}
+        id={videoId}
         autoPlay
+        loop
         muted
         playsInline
         preload="auto"
-        loop
-        className="w-full h-full object-cover object-center"
-        id={videoId}
-        width="100%"
-        height="100%"
+        className="w-full h-full object-cover object-center opacity-90"
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
-          right: 0,
-          bottom: 0,
-          objectFit: 'cover',
+          width: '100%',
+          height: '100%',
           zIndex: -1,
-          margin: 0,
-          padding: 0,
-          border: '2px solid #1f2937',
-          transition: 'opacity 0.5s ease-in-out'
+          objectFit: 'cover'
         }}
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <div className="absolute inset-0 bg-black/10" />
     </div>
   )
 }
