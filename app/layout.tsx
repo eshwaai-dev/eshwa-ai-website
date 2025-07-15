@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Chatbot from '@/components/chatbot/Chatbot';
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Eshwa AI - AI Solutions for Modern Business',
+  description: 'Helping businesses unlock real-world value with secure, ethical, and scalable AI solutions.',
+  generator: 'Next.js',
 }
 
 export default function RootLayout({
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Chatbot />
+      </body>
     </html>
   )
 }
