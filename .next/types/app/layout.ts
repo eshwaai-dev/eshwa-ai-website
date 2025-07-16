@@ -1,4 +1,4 @@
-// File: /Users/prashant/eshwaai/eshwaai-dev/eshwa-ai-website/app/layout.tsx
+// File: /Users/arjuntyagi/Downloads/Eshwa AI/eshwa-ai-website/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
