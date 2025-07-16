@@ -100,7 +100,7 @@ export default function TrainingVideo() {
           transition: 'opacity 0.5s ease-in-out'
         }}
       >
-        <source src="/videos/training.mp4" type="video/mp4" />
+        <source src="/videos/Abstract DNA Helix Animation.mp4" type="video/mp4" />
         <img
           src="/placeholder.jpg"
           alt="Training Video"

@@ -82,7 +82,7 @@ export default function SolutionsPage() {
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-blue-500 hover:bg-blue-600">
+            <Button>
               Contact Us for Pre-Launch Access
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
