@@ -11,8 +11,8 @@ function InfinityDots() {
   // Create single infinity curve points
   const infinityPoints = useMemo(() => {
     const points = []
-    const scale = 1.5
-    const numPoints = 60
+    const scale = 2.5
+    const numPoints = 32
 
     for (let i = 0; i <= numPoints; i++) {
       const t = (i / numPoints) * Math.PI * 2
@@ -24,7 +24,7 @@ function InfinityDots() {
       const z = Math.sin(t * 3) * 0.15 // Add slight Z variation for depth
 
       // Vary dot sizes based on position for visual interest
-      const size = 0.06 + Math.abs(Math.sin(t * 2.5)) * 0.04
+      const size = 0.1 + Math.abs(Math.sin(t * 2.5)) * 0.04
 
       points.push({
         position: [x, y, z],
@@ -39,28 +39,37 @@ function InfinityDots() {
 
   useFrame((state) => {
     if (groupRef.current) {
-      // Gentle rotation around Y axis
-      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.08
-
       // Slight tilt on X axis
       groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.04
-
+      
+      const totalDots = infinityPoints.length
+      const time = state.clock.elapsedTime
+      
+      // Calculate the base position for the first pulsing dot
+      const basePosition = (time * 0.5) % 1 // Moves from 0 to 1 over time
+      
       // Animate individual dots
       groupRef.current.children.forEach((child, index) => {
         const mesh = child as THREE.Mesh
         const point = infinityPoints[index]
         if (point) {
-          // Pulsing effect with different phases
-          const pulse = 1 + Math.sin(state.clock.elapsedTime * 1.5 + point.delay) * 0.25
-          mesh.scale.setScalar(pulse)
-
-          // Floating effect
-          mesh.position.y = point.originalY + Math.sin(state.clock.elapsedTime * 0.8 + point.delay) * 0.1
-
-          // Subtle color variation
+          // Calculate the position of this dot in the sequence (0 to 1)
+          const dotPosition = index / totalDots
+          
+          // Calculate distance to the current pulse position (handling wrap-around)
+          let distance = Math.abs((dotPosition - basePosition + 1.5) % 1 - 0.5)
+          
+          // Create a pulse effect that follows the base position
+          const pulseWidth = 0.2 // Slightly reduced pulse width
+          const pulse = Math.max(0, 1 - (distance / pulseWidth) * 2)
+          
+          // Apply scaling with easing for smoother pulse (slightly increased amplitude)
+          const scale = 0.9 + Math.pow(pulse, 1.8) * 0.6 // Increased max scale and adjusted easing
+          mesh.scale.setScalar(scale)
+          
+          // Adjusted emissive intensity
           const material = mesh.material as THREE.MeshStandardMaterial
-          const intensity = 0.05 + Math.sin(state.clock.elapsedTime + point.delay) * 0.05
-          material.emissiveIntensity = Math.max(0, intensity)
+          material.emissiveIntensity = 0.1 + pulse * 0.2 // Slightly increased emissive intensity
         }
       })
     }
@@ -184,15 +193,11 @@ export default function AnimatedLogo({ className = "" }: { className?: string })
           {/* Single infinity symbol */}
           <InfinityDots />
 
-          {/* Background particles */}
-          <FloatingParticles />
 
           {/* Controls for interaction */}
           <OrbitControls
             enableZoom={false}
             enablePan={false}
-            autoRotate
-            autoRotateSpeed={0.3}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
